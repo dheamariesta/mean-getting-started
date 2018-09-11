@@ -1,0 +1,20 @@
+{
+  "name": "node-todo",
+  "version": "0.0.0",
+  "description": "Simple todo application.",
+  "main": "server.js",
+  "author": "Dhea",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.10",
+    "morgan": "~1.2.2"
+  },
+  "devDependencies": {
+    "jasmine": "^3.2.0"
+  },
+  "scripts": {
+    "test": "jasmine"
+  }
+}
