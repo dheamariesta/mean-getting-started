@@ -23,7 +23,35 @@ var Todo = mongoose.model('Todo', {
   text: String
 });
 
+// define model
+var Data = mongoose.model('Data', {
+  x: Number,
+  y: Number
+});
+
 // routes
+const CSVToJSON = require("csvtojson");
+const FileSystem = require("fs");
+
+
+// app.get('/csv', function(req, res){
+//   CSVToJSON().fromFile("./public/data.csv").then(source => {
+//       console.log(source);
+//       source.forEach((entry) => {
+//         Data.create({
+//           x: entry.x,
+//           y: entry.y
+//         }, function(err, todo){
+//           if(err){
+//             res.send(err);
+//           }
+//         });
+//       });
+//
+//       res.json(source);
+//   });
+//
+// });
 app.get('/api/todos', function(req,res){
   Todo.find(function(err, todos){
     if (err)
