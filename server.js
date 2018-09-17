@@ -7,7 +7,7 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT
 
 /* ==== CONFIGURATION ==== */
 mongoose.connect('mongodb://localhost:27017/dhea');
-
+app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public')); // state the static files location
 app.use(morgan('dev')); // log every requests to the console
 app.use(bodyParser.urlencoded({'extended':'true'})); // parse application/x-www-form-urlencoded
@@ -98,6 +98,6 @@ app.delete('/api/todos/:todo_id', function(req, res){
 
 
 // application
-app.get('*', function(req, res){
-  res.sendFile('./public/index.html');
+app.get('/', function(req, res){
+  res.render('./public/index.html');
 });
