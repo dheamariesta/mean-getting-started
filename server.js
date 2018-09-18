@@ -96,7 +96,9 @@ app.delete('/api/todos/:todo_id', function(req, res){
   });
 });
 
-
+app.get('/api/data', function(req, res){
+  
+});
 // application
 app.get('/', function(req, res){
   res.render('./public/index.html');
